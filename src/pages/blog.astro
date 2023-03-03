@@ -1,10 +1,14 @@
+---
+const pageTitle="My Astro Learning Blog";
+---
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>My Blog</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
         <h1>My Astro Site</h1>
@@ -18,5 +22,10 @@
         <p>
             我将在这里更新我的<strong>Astro</strong>学习笔记
         </p>
+        <ul>
+            <li><a href="/posts/post-1">Post 1</a></li>
+            <li><a href="/posts/post-2">Post 2</a></li>
+            <li><a href="/posts/post-3">Post 3</a></li>
+        </ul>
     </body>
 </html>

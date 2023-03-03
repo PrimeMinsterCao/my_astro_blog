@@ -1,10 +1,27 @@
+---
+const pageTitle = "About Me";
+
+const identity = {
+    firstName: "turbulenceCalmer",
+    country: "China",
+    occupation: "Hobby Developer",
+    hobbies: ["basketball", "programing", "Games"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy=true;
+const finished=false;
+const goal=3;
+---
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>My About</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
         <h1>My Astro Site</h1>
@@ -13,7 +30,7 @@
         <a href="/about">About</a>
         <a href="/blog">Blog</a>
 
-        <h1>About Me</h1>
+        <h1>{pageTitle}</h1>
         <h2>... and my new Astro site!</h2>
 
         <p>
@@ -21,15 +38,38 @@
             second page on my website, and it's the first one I built myself!
         </p>
         <p>
-            我通过<strong>Astro</strong>的博客教程制作静态博客，并部署到<strong>Netlify</strong>上。
+            我通过<strong>Astro</strong>的博客教程制作静态博客，并部署到<strong
+                >Netlify</strong
+            >上。
         </p>
 
         <p>
             This site will update as I complete more of the tutorial, so keep
             checking back and see how my journey is going!
         </p>
-        <p>
-            我将会不断更新这个博客，按照教程计划不断更进。
-        </p>
+        <p>我将会不断更新这个博客，按照教程计划不断更进。</p>
+        <hr />
+        <p>以下是关于我的一些事实</p>
+        <ul>
+            <li>我的名字是{identity.firstName}</li>
+            <li>
+                我生活在{identity.country}，并且我是一名{identity.occupation}.
+            </li>
+            {
+                identity.hobbies.length >= 2 && (
+                    <li>
+                        Two of my hobbies are: {identity.hobbies[0]} and{" "}
+                        {identity.hobbies[1]}
+                    </li>
+                )
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+        {happy && <p>I am happy to be learning Astro!</p>}
+        {finished && <p>I finished this tutorials!</p>}
+        {goal===3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not to finish in 3 days.</p>}
     </body>
 </html>
