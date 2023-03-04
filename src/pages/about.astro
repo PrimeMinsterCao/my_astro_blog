@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "About Me";
 
@@ -43,9 +45,7 @@ const textCase="uppercase";
     <body>
         <h1>My Astro Site</h1>
 
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
+        <Header/>
 
         <h1>{pageTitle}</h1>
         <h2>... and my new Astro site!</h2>
@@ -88,5 +88,7 @@ const textCase="uppercase";
         {happy && <p>I am happy to be learning Astro!</p>}
         {finished && <p>I finished this tutorials!</p>}
         {goal===3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not to finish in 3 days.</p>}
+        
+        <Footer/>
     </body>
 </html>
